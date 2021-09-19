@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Lora&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --light-color:#89DEDB;
+    --body-color:#17225C;
+    --heading-color:#B81509;
+    --contrast-color:#F24C27;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.25;
+    font-family: 'Crimson Text', serif;
+    color: var(--body-color);
+    background-image: linear-gradient(90deg, rgba(228, 228, 228, 0.02) 0%, rgba(228, 228, 228, 0.02) 18%,
+    rgba(4, 4, 4, 0.02) 18%, rgba(4, 4, 4, 0.02) 19%,rgba(114, 114, 114, 0.02) 19%, rgba(114, 114, 114, 0.02) 49%,
+    rgba(81, 81, 81, 0.02) 49%, rgba(81, 81, 81, 0.02) 60%,rgba(14, 14, 14, 0.02) 60%, rgba(14, 14, 14, 0.02) 81%,
+    rgba(115, 115, 115, 0.02) 81%, rgba(115, 115, 115, 0.02) 87%,rgba(211, 211, 211, 0.02) 87%, rgba(211, 211, 211, 0.02) 93%,
+    rgba(25, 25, 25, 0.02) 93%, rgba(25, 25, 25, 0.02) 100%),linear-gradient(90deg, rgba(221, 221, 221, 0.1) 0%, 
+    rgba(221, 221, 221, 0.1) 9%,rgba(46, 46, 46, 0.1) 9%, rgba(46, 46, 46, 0.1) 33%,rgba(227, 227, 227, 0.1) 33%, 
+    rgba(227, 227, 227, 0.1) 49%,rgba(148, 148, 148, 0.1) 49%, rgba(148, 148, 148, 0.1) 51%,rgba(62, 62, 62, 0.1) 51%, 
+    rgba(62, 62, 62, 0.1) 54%,rgba(202, 202, 202, 0.1) 54%, rgba(202, 202, 202, 0.1) 86%,rgba(242, 242, 242, 0.1) 86%, 
+    rgba(242, 242, 242, 0.1) 96%,rgba(34, 34, 34, 0.1) 96%, rgba(34, 34, 34, 0.1) 100%),linear-gradient(90deg, 
+    rgba(83, 83, 83, 0.08) 0%, rgba(83, 83, 83, 0.08) 19%,rgba(160, 160, 160, 0.08) 19%, rgba(160, 160, 160, 0.08) 39%,
+    rgba(93, 93, 93, 0.08) 39%, rgba(93, 93, 93, 0.08) 41%,rgba(131, 131, 131, 0.08) 41%, rgba(131, 131, 131, 0.08) 52%,
+    rgba(40, 40, 40, 0.08) 52%, rgba(40, 40, 40, 0.08) 61%,rgba(204, 204, 204, 0.08) 61%, rgba(204, 204, 204, 0.08) 65%,
+    rgba(55, 55, 55, 0.08) 65%, rgba(55, 55, 55, 0.08) 82%,rgba(233, 233, 233, 0.08) 82%, rgba(233, 233, 233, 0.08) 100%),linear-gradient(90deg, rgba(184,21,9, 0.09),rgb(199,255,242),rgba(109,229,233, 0.65));
+}
+
+h1, h2, h3 {
+    line-height: 1.15;
+    font-family: 'Lora', serif;
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--contrast-color);
+}
+
+a:hover {
+    color: var(--contrast-color);
+}
+
+body#about img {
+    height: 20em;
+}
+
+#about p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head nav"
+                         "nav nav"
+                         "main  main"
+                         "foot foot";
+    grid-template-columns: "1fr 4fr";
+    grid-template-rows: "auto auto 1fr auto";
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        display: grid;
+        grid-template-areas: "head nav"
+                             "main  main"
+                             "foot foot";
+        grid-template-rows: "auto 1fr auto";
+
+}}
+
+body > * {
+    padding-left: var(--horizontal-space);
+}
+
+body > header {
+    grid-area: head;
+}
+
+body > nav {
+    grid-area: nav;
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body > nav ul li {
+    display: inline;
+    padding-right: 1rem;
+}
+
+body > main {
+    grid-area: main;
+}
+
+body > footer {
+    grid-area: foot;
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+body#portfolio ol#portfolioItems{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ol#portfolioItems li{
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ol#portfolioItems li img {
+    max-width: 100%;
+}
