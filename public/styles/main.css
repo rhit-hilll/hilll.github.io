@@ -3,7 +3,7 @@
 
 :root {
     --vertical-space: 2rem;
-    --horizontal-space: 3rem;
+    --horizontal-space: 2.5rem;
 
     --light-color:#89DEDB;
     --body-color:#17225C;
@@ -37,9 +37,18 @@ h1, h2, h3 {
     color: var(--heading-color);
 }
 
+header.h1 {
+    font-size: 1.1em;
+}
+
 a {
     color: var(--body-color);
     text-decoration-color: var(--contrast-color);
+}
+
+img {
+    -webkit-box-shadow: -3px 2px 5px 1px rgba(0,0,0,0.45); 
+    box-shadow: -3px 2px 5px 1px rgba(0,0,0,0.45);
 }
 
 a:hover {
@@ -52,11 +61,12 @@ body#about img {
 
 #about p {
     max-width: 50em;
+    font-size: 1.1;
 }
 
 body {
     display: grid;
-    grid-template-areas: "head nav"
+    grid-template-areas: "head head"
                          "nav nav"
                          "main  main"
                          "foot foot";
@@ -64,11 +74,11 @@ body {
     grid-template-rows: "auto auto 1fr auto";
 }
 
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 30em) {
     body {
         display: grid;
         grid-template-areas: "head nav"
-                             "main  main"
+                             "main main"
                              "foot foot";
         grid-template-rows: "auto 1fr auto";
 
@@ -111,6 +121,7 @@ header, footer {
 
 header h1, footer h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 body#portfolio ol#portfolioItems{
@@ -121,7 +132,7 @@ body#portfolio ol#portfolioItems{
     padding: 0;
 }
 
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 576px) {
     body#portfolio ol#portfolioItems li{
         flex-basis: 48%;
         padding-right: 2%;
